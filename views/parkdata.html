@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Park Data</title>
+</head>
+<body>
+    <h1>Park Data</h1>
+    <div id="parkData"></div>
+
+    <script>
+        // Parse the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const parkName = urlParams.get('parkName');
+        const parkDistance = urlParams.get('parkDistance');
+        const parkLat = urlParams.get('parkLat');
+        const parkLng = urlParams.get('parkLng');
+
+        if (parkName && parkDistance) {
+            // Display the park data on the page
+            const parkDataElement = document.getElementById('parkData');
+            //parkDataElement.innerHTML = `<p>Name: ${decodeURIComponent(parkName)}</p><p>Distance: ${parkDistance} km</p>`;
+            parkDataElement.innerHTML = `
+                <p>Name: ${decodeURIComponent(parkName)}</p>
+                <p>Distance: ${parkDistance} km</p>
+                <p>Latitude: ${parkLat}</p>
+                <p>Longitude: ${parkLng}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

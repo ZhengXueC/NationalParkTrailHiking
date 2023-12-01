@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head.ejs') %>
+    
+    <title>Activity Selection | ClearTrail CA</title>
+<body class="filler colo text-white custom-text-shadow text-center">
+
+    <%- include('./partials/nav.ejs') %>
+
+
+
+    <h1 class="Intro2 colo text-white custom-text-shadow text-center" style="margin-top: 00px; font-size: 80px;">Choose a Hiking Activity</h1>
+
+            <main class="container mt-4 container-custom text-center">
+                <div class="row justify-content-center">
+                  <div class="col-md-6 ">
+        </div>
+    </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Park Description -->
+                <div >
+                      <div class="transparent-box">
+                      <div><div class="activity-card" id="short-hike-card">
+                        <h2>Short Hikes</h2>
+                        <p>Quick and easy trails for a leisurely hike.</p>
+                    </div>
+                </div>
+                <br>
+                    <div class="activity-card" id="long-trek-card">
+                        <h2>Long Treks</h2>
+                        <p>Adventure on longer, more challenging hikes.</p>
+                    </div>
+            
+                    <div class="activity-card" id="mountain-hike-card">
+                        <h2>Mountainous Terrain</h2>
+                        <p>Explore rugged mountain trails with stunning views.</p>
+                    </div>
+            
+                    <div class="activity-card" id="lakeside-walk-card">
+                        <h2>Lakeside Walks</h2>
+                        <p>Relaxing walks by serene lakeshores.</p>
+                    </div>
+            
+                    <div class="preferences">
+                        <h3>Select Your Preferences:</h3>
+                        <label>
+                            <input type="checkbox" id="short-hike"> Short Hikes
+                        </label>
+                        <label>
+                            <input type="checkbox" id="long-trek"> Long Treks
+                        </label>
+                        <label>
+                            <input type="checkbox" id="mountain-hike"> Mountainous Terrain
+                        </label>
+                        <label>
+                            <input type="checkbox" id="lakeside-walk"> Lakeside Walks
+                        </label>
+                        <label>
+                            <input type="checkbox" id="open-to-all" checked> Open to All Types
+                        </label>
+                    </div>
+                        
+                      </div>
+                        
+                        
+                    
+                
+              </div>
+              
+            </div>
+            
+        </div>
+    </main>
+
+    <%- include('./partials/foot.ejs') %>
+
+    <script>
+      // JavaScript to handle user interaction with activity cards
+      const activityCards = document.querySelectorAll('.activity-card');
+      activityCards.forEach(card => {
+          card.addEventListener('click', () => {
+              const selectedActivity = card.querySelector('h2').textContent;
+              alert(`You selected: ${selectedActivity}`);
+              // You can add further functionality based on the selected activity.
+          });
+      });
+
+      // JavaScript to handle user preferences
+      const openToAllCheckbox = document.getElementById('open-to-all');
+      const preferenceCheckboxes = document.querySelectorAll('input[type="checkbox"]:not(#open-to-all)');
+      openToAllCheckbox.addEventListener('change', () => {
+          const isChecked = openToAllCheckbox.checked;
+          preferenceCheckboxes.forEach(checkbox => {
+              checkbox.disabled = isChecked;
+          });
+      });
+  </script>
+</body>
+</html>

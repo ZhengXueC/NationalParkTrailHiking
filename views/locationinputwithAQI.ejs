@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head.ejs') %>
+    <title>Location Input | ClearTrail CA</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+           
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9b0ja2ppoS-Ud8S8E_ohiuj6JxeCVaMg&libraries=places"></script> 
+    <script src="myFunctions.js" defer></script>
+</head>
+<script src="myJS.js" defer></script>
+ 
+<body style="background-image: url('Images/pattern1.jpg');"class="filler" >
+    <header>
+      <%- include('./partials/nav.ejs') %>
+    </header>
+  
+    <main class="container mt-4 container-custom text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="Intro2 text-dark">Find a Hiking NationalPark</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+               
+                <div class="container">
+                   
+                    <div id="map"></div>
+                   
+                </div>
+            </div>
+        </div>
+       
+        <!-- Location Input Form -->
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <input id="searchTextField"  type="text"size="50" class="form-control" placeholder="Enter your location or desired hiking destination">
+                    </div>
+                   
+                    
+                </form>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-6">
+              <label for="numberOfParks">Select number of parks to display:</label>
+              <select id="numberOfParks" class="form-control">
+                  <option value="1">1</option>
+                  <option value="3">3</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="all">All</option>
+              </select>
+              <button onclick="showSelectedParks()" class="btn btn-primary">Show Parks</button>
+          </div>
+      </div>
+       
+    </main>
+    
+  
+    <%- include('./partials/foot.ejs') %>
+   <!-- search for nationalparks nearest -->
+   
+    
+</body>
+
+</html>
