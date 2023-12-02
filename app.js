@@ -298,7 +298,7 @@ app.get('/api/:id/airquality', async (req, res) => {
 
  app.get('/404', (req, res) => res.send("error logging in"));
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 app.listen(port , () => console.log('App listening on port ' + port));
 
 /*  PASSPORT SETUP  */
