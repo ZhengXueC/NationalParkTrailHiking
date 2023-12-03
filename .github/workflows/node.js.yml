@@ -24,9 +24,5 @@ jobs:
         
     - run: |
         npm install
-
-    #- run: |
-
-     #   pm2 restart ServerAPI
-    # - run: pm2 restart ServerAPI
-     - run: | pm2 start app.js --name=ServerAPI    
+    - run: | 
+        pm2 start app.js --name=ServerAPI    
