@@ -25,6 +25,6 @@ jobs:
     - run: |
         npm install
     - run: |
-        pm2 restart ServerAPI
+        pm2 restart NationalParkTrailHiking 
     # - run: pm2 restart ServerAPI
     # - run: | pm2 start app.js --name=NationalParkTrailHiking    
