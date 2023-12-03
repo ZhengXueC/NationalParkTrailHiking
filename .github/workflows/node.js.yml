@@ -25,4 +25,4 @@ jobs:
     - run: |
         npm install
     - run: | 
-        pm2 start app.js --name=ServerAPI    
+        pm2 start app.js --name=NationalParkTrailHiking    
